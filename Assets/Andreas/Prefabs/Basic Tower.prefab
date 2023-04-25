@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -404121853
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: fe6eff95851df884486f40c43051ab41, type: 3}
   m_Color: {r: 0.5851715, g: 0.26633143, b: 0.5943396, a: 1}
   m_FlipX: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   pivot: {fileID: 4769686193096930120}
   barrel: {fileID: 6861028490352479693}
-  bullet: {fileID: 5933763431922497945, guid: 50b29cd738f28cc4fbab954795d4c75f, type: 3}
+  bullet: {fileID: 4436564343880147238, guid: 79bd2298b8f748445b375a29c6f090bd, type: 3}
 --- !u!114 &2757702884526458103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,9 +191,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1405175931
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 59ec825dc4d73444c9ab2c51b358f4da, type: 3}
   m_Color: {r: 0.31786332, g: 0.18503025, b: 0.3962264, a: 1}
   m_FlipX: 0
