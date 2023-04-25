@@ -9,8 +9,11 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int mapWidth;
     [SerializeField] private int mapHeight;
 
-    private List<GameObject> mapTiles = new List<GameObject>();
-    private List<GameObject> pathTiles = new List<GameObject>();
+    public static List<GameObject> mapTiles = new List<GameObject>();
+    public static List<GameObject> pathTiles = new List<GameObject>();
+
+    public static GameObject startTile;
+    public static GameObject endTile;
 
     private bool reachedX = false;
     private bool reachedY = false;
@@ -20,6 +23,9 @@ public class MapGenerator : MonoBehaviour
     private int nextIndex;
 
     public Color pathColor;
+
+    public Color startColor;
+    public Color endColor;
 
     private void Start()
     {
@@ -91,8 +97,6 @@ public class MapGenerator : MonoBehaviour
         List<GameObject> topEdgeTiles = getTopEdgeTiles();
         List<GameObject> bottomEdgeTiles = getBottomEdgeTiles();
 
-        GameObject startTile;
-        GameObject endTile;
 
         int rand1 = Random.Range(0, mapWidth);
         int rand2 = Random.Range(0, mapWidth);
@@ -144,7 +148,11 @@ public class MapGenerator : MonoBehaviour
 
         foreach (GameObject obj in pathTiles)
         {
-            obj.GetComponent<SpriteRenderer>().color = pathColor;   }
+            obj.GetComponent<SpriteRenderer>().color = pathColor;   
+        }
+
+        startTile.GetComponent<SpriteRenderer>().color = startColor;
+        endTile.GetComponent<SpriteRenderer>().color = endColor;
  
     }
 }
