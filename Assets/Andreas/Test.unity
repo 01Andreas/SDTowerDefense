@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapTile: {fileID: 2745432666157705029, guid: ab20bc0a3c7711344a8910db95b8da9c, type: 3}
-  mapWidth: 8
-  mapHeight: 8
+  mapWidth: 20
+  mapHeight: 10
   pathColor: {r: 0.87843144, g: 0.15686275, b: 0, a: 0.7058824}
   startColor: {r: 0.87843144, g: 0.15686275, b: 0, a: 0.5882353}
   endColor: {r: 0.87843144, g: 0.15686275, b: 0, a: 0.5882353}
@@ -1090,8 +1090,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 2149679530066768603, guid: 175f2ce81aa84b74f938c740e7bb5de2, type: 3}
-  - {fileID: 2149679530066768603, guid: c731757581c97b844a89d56819d4107d, type: 3}
-  timeBetweenWaves: 5
+  - {fileID: 6789115686333847369, guid: 24a0f4769b5f92541b773fc7e04c99b2, type: 3}
+  - {fileID: 192527917770703930, guid: 7564c7e19f757be4586bb9989562e1d6, type: 3}
+  - {fileID: 4404826433428705719, guid: 6fe918d8c9318c54db6debd4c04a49b0, type: 3}
+  timeBetweenWaves: 3
   timeBeforeRoundStarts: 5
   timeVariable: 0
   isRoundGoing: 0
@@ -1315,7 +1317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588095459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3, y: 3.3, z: -10}
+  m_LocalPosition: {x: 9.5, y: 4.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

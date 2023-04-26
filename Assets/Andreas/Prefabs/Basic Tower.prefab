@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 407657930387909227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4769686193096930120}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: -404121853
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: fe6eff95851df884486f40c43051ab41, type: 3}
-  m_Color: {r: 0.5851715, g: 0.26633143, b: 0.5943396, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a6f8e4b81253e9947b8aa9ba75d31f62, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  damage: 1
+  damage: 2
   timeBetweenShots: 1
   currentTarget: {fileID: 0}
   pivot: {fileID: 4769686193096930120}
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.92, y: 1.92}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -173,8 +173,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2278656685552530406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.333, y: 0, z: 0}
-  m_LocalScale: {x: 0.67, y: 0.12, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4769686193096930120}
@@ -221,8 +221,8 @@ SpriteRenderer:
   m_SortingLayerID: 1405175931
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 59ec825dc4d73444c9ab2c51b358f4da, type: 3}
-  m_Color: {r: 0.31786332, g: 0.18503025, b: 0.3962264, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1ee2fe898b01d7e4aba64210bdaa26ca, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
