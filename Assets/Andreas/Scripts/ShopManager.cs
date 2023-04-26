@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public MoneyManager moneyManager;
+
+    public GameObject basicTowerPrefab;
+
+    public int basicTowerCost;
+    public int GetTowerCost(GameObject towerPrefab)
     {
-        
+        int cost = 0;
+
+        if (towerPrefab == basicTowerPrefab)
+        {
+            cost = basicTowerCost;
+        }
+
+        return cost;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BuyTower(GameObject towerPrefab)
     {
-        
+        moneyManager.RemoveMoney(GetTowerCost(towerPrefab));
+    }
+
+    public bool CanBuyTower(GameObject towerPrefab)
+    {
+        int cost = GetTowerCost(towerPrefab);
+
+        bool canBuy = false;
+
+        if (moneyManager.GetCurrentMoney() >= cost)
+        {
+            canBuy = true;
+        }
+
+        return canBuy;
     }
 }

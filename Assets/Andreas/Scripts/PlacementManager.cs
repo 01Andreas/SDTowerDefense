@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlacementManager : MonoBehaviour
 {
+    public ShopManager shopManager;
+
     public GameObject basicTowerObject;
+
+    private GameObject currentTowerPlacing;
 
     private GameObject dummyPlacement;
 
@@ -19,7 +23,7 @@ public class PlacementManager : MonoBehaviour
 
     public void Start()
     {
-        StartBuilding();
+        
     }
 
     public Vector2 GetMousePosition()
@@ -67,18 +71,29 @@ public class PlacementManager : MonoBehaviour
         {
             if (CheckForTower() == false)
             {
-                GameObject newTowerObject = Instantiate(basicTowerObject);
-                newTowerObject.layer = LayerMask.NameToLayer("Tower");
-;               newTowerObject.transform.position = hoverTile.transform.position;
+                if (shopManager.CanBuyTower(currentTowerPlacing) == true)
+                {
+                    GameObject newTowerObject = Instantiate(currentTowerPlacing);
+                    newTowerObject.layer = LayerMask.NameToLayer("Tower");
+                    ; newTowerObject.transform.position = hoverTile.transform.position;
 
-                EndBuilding();
+                    EndBuilding();
+                    shopManager.BuyTower(currentTowerPlacing);
+                }
+                else
+                {
+                    Debug.Log("Need more money");
+                }
             }
         }
     }
 
-    public void StartBuilding()
+    public void StartBuilding(GameObject towerToBuild)
     {
         isBuilding = true;
+
+        currentTowerPlacing = towerToBuild;
+        dummyPlacement = Instantiate(currentTowerPlacing);
 
         dummyPlacement = Instantiate(basicTowerObject);
 
