@@ -95,8 +95,6 @@ public class PlacementManager : MonoBehaviour
         currentTowerPlacing = towerToBuild;
         dummyPlacement = Instantiate(currentTowerPlacing);
 
-        dummyPlacement = Instantiate(basicTowerObject);
-
         if (dummyPlacement.GetComponent<Tower>() != null)
         {
             Destroy(dummyPlacement.GetComponent<Tower>());

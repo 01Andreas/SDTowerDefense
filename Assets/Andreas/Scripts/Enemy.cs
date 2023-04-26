@@ -11,9 +11,13 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float movementSpeed;
 
+    [SerializeField]
     private int killReward;
+    [SerializeField]
     private int damage;
 
+    private MoneyManager moneyManager;
+    private PlayerHealth Health;
     private GameObject targetTile;
 
     private void Awake()
@@ -24,6 +28,8 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         initializeEnemy();
+        moneyManager = GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyManager>();
+        Health = GameObject.FindGameObjectWithTag("Health").GetComponent<PlayerHealth>();
     }
 
     private void initializeEnemy()
@@ -34,7 +40,6 @@ public class Enemy : MonoBehaviour
     public void takeDamage(float amount)
     {
         enemyHealth -= amount;
-
         if (enemyHealth <= 0)
         {
             die();
@@ -44,6 +49,8 @@ public class Enemy : MonoBehaviour
     private void die()
     {
         Enemies.enemies.Remove(gameObject);
+        moneyManager.AddMoney(killReward);
+
         Destroy(transform.gameObject);
     }
 
@@ -54,15 +61,29 @@ public class Enemy : MonoBehaviour
 
     private void checkPosition()
     {
-        if (targetTile != null && targetTile != MapGenerator.endTile)
+        if (targetTile != null)
         {
-            float distance = (transform.position - targetTile.transform.position). magnitude;
+            float distance = (transform.position - targetTile.transform.position).magnitude;
+
 
             if (distance < 0.001f)
             {
-                int currentIndex = MapGenerator.pathTiles.IndexOf(targetTile);
+                if (targetTile != MapGenerator.endTile)
+                {
 
-                targetTile = MapGenerator.pathTiles[currentIndex + 1];
+                    int currentIndex = MapGenerator.pathTiles.IndexOf(targetTile);
+
+                    targetTile = MapGenerator.pathTiles[currentIndex + 1];
+                }
+                else
+                {
+                    Enemies.enemies.Remove(gameObject);
+                    Health.DamagePlayer(damage);
+
+                    Destroy(transform.gameObject);
+                    // DoEndStuff
+                    Debug.Log("Yes");
+                }
             }
         }
     }

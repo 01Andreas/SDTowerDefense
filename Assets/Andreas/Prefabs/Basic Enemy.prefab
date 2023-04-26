@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 100
-  movementSpeed: 0.5
+  movementSpeed: 5
+  killReward: 0
+  damage: 10
 --- !u!61 &381328356842699124
 BoxCollider2D:
   m_ObjectHideFlags: 0

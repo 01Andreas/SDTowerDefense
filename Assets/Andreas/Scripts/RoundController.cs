@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoundController : MonoBehaviour
 {
-    public GameObject basicEnemy;
+    public List<GameObject> enemies;
 
     public float timeBetweenWaves;
     public float timeBeforeRoundStarts;
@@ -36,7 +36,7 @@ public class RoundController : MonoBehaviour
     {
         for (int i = 0; i < round; i++)
         {
-            GameObject newEnemy = Instantiate(basicEnemy, MapGenerator.startTile.transform.position, Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemies[Random.Range(0,enemies.Count )], MapGenerator.startTile.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(1f);
         }
     }
